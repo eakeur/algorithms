@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestSortIntArray(t *testing.T) {
+func Test_bubbleSort(t *testing.T) {
 	type args struct {
 		arr []int
 	}
@@ -23,9 +23,15 @@ func TestSortIntArray(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := SortIntArray(tt.args.arr); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("SortIntArray() = %v, want %v", got, tt.want)
+			if got := bubbleSort(tt.args.arr); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("bubbleSort() = %v, want %v", got, tt.want)
 			}
 		})
+	}
+}
+
+func Benchmark_bubbleSort(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		bubbleSort([]int{10, 32, 0, -55, 44, 22, 0, 2, 1, 2, 5, 8, 9})
 	}
 }

@@ -35,3 +35,9 @@ func Test_mergeSort(t *testing.T) {
 		})
 	}
 }
+
+func Benchmark_mergeSort(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		mergeSort([]int{10, 32, 0, -55, 44, 22, 0, 2, 1, 2, 5, 8, 9})
+	}
+}

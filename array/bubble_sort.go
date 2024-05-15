@@ -1,6 +1,6 @@
 package array
 
-func SortIntArray(arr []int) []int {
+func bubbleSort(arr []int) []int {
 
 	for i := 0; i < len(arr); i++ {
 		// Range over the same array to compare arr[i]

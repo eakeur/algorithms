@@ -5,18 +5,17 @@ func quickSort(arr []int) {
 		return
 	}
 
-	pivot, i, j := arr[len(arr)-1], -1, 0
+	pivot, i, j := arr[len(arr)-1], 0, 0
 
 	for j < len(arr)-1 {
 		if arr[j] < pivot {
-			i++
 			arr[i], arr[j] = arr[j], arr[i]
+			i++
 		}
 
 		j++
 	}
 
-	i++
 	arr[i], arr[j] = arr[j], arr[i]
 
 	quickSort(arr[:i])
